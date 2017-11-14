@@ -9,3 +9,8 @@ A fork to fix a few bugs / versioning issues :
 * problem passing the "mtype=grouped" option to **glmnet()** function (for multinomial models)
  * **TODO** : check how the option is dealt with for **cvglmnet()**
  
+ 
+ * re-formating of the matrix of predictions for multinomial models
+ 
+ * issue in passing "auc" option to **cvglmnet()**
+ 
