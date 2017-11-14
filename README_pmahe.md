@@ -12,6 +12,7 @@ A fork to fix a few bugs / versioning issues :
  * re-formating of the matrix of predictions for multinomial models
    * a big matrix of size $n \times K \times n_{\lambda}$ 
    * change into $n_{\lambda}$ matrices of size $n \times K$
+   * **NB : should be done as R version --> to check **
 
  * issue in passing "auc" option to **cvglmnet()**
  
