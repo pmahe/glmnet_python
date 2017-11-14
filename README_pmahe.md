@@ -6,8 +6,8 @@ A fork to fix a few bugs / versioning issues :
   * problem : scipy.floor(nobs/nfolds) returned a float variable, that scipy.tile() does not like
   * fix : ma = scipy.tile(scipy.arange(nfolds), [1, int(scipy.floor(nobs/nfolds))])
 
-* problem passing the "mtype=grouped" option to **glmnet()** function (for multinomial models)
- * **TODO** : check how the option is dealt with for **cvglmnet()**
+* problem passing the "mtype=grouped" option to **glmnet()** function (for multinomial models) 
+  * **TODO** : check how the option is dealt with for **cvglmnet()**
  
  
  * re-formating of the matrix of predictions for multinomial models
