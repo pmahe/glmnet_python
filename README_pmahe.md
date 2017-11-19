@@ -7,7 +7,8 @@ A fork to fix a few bugs / versioning issues :
   * fix : *ma = scipy.tile(scipy.arange(nfolds), [1, int(scipy.floor(nobs/nfolds))])*
 
 * problem passing the "mtype=grouped" option to **glmnet()** function (for multinomial models) 
-  * line 424 : *elif (indm == 2):* changed into *elif (indm\[0\] == 1):*
+  * line 424 : *elif (indm == 2)* changed into *elif (indm\[0\] == 1)*
+   * (we need to check if the 1st (and single) element of 'indm' is equal to the 2nd element of the 'mtypelist' defined a couple of lines before)
   * **TODO** : check how the option is dealt with for **cvglmnet()**
  
  * problem in the output of **glmnetPredict()** with model of *family='mmultinomial', when *ptype='class'*
