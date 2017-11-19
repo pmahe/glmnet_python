@@ -12,11 +12,8 @@ A fork to fix a few bugs / versioning issues :
  * problem in the output of **glmnetPredict()** with model of *family='mmultinomial', when *ptype='class'*
    * problem : output provided = a vector of length (Nsamples x Nlambda), while should be a matrix of size \[Nsamples x Nlambdas\]
    * fix : reshape of result by *result = scipy.reshape(result, (-1,dp.shape[2]), order = 'F')* at line 258
-   
- re-formating of the matrix of predictions for multinomial models
-   * a big matrix of size $n \times K \times n_{\lambda}$ 
-   * change into $n_{\lambda}$ matrices of size $n \times K$
-   * **NB : should be done as R version --> to check**
+   * (NB : works when *ptype='link'* or *ptype='response'*  : output = an array of size \[Nsamples x Nclasses x Nlambdas \]
+
 
  * issue in passing "auc" option to **cvglmnet()**
  
