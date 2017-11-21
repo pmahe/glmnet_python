@@ -255,6 +255,7 @@ def glmnetPredict(fit,\
             for i in range(dp.shape[2]):
                 t = softmax(dp[:, :, i])
                 result = scipy.append(result, fit['label'][t['pclass']])
+            result = scipy.reshape(result, (-1,dp.shape[2]), order = 'F')	# DEBUG (PM)
 
     # coxnet
     if fit['class'] == 'coxnet':

@@ -421,9 +421,11 @@ def glmnet(*, x, y, family='gaussian', **options):
         indm      = [i for i in range(len(indxtf)) if indxtf[i] == True]
         if len(indm) == 0:
             raise ValueError('Error: mtype should be one of ''ungrouped'' or ''grouped''')
-        elif (indm == 2):
+        #elif (indm == 2): #BUG !! (PM)
+        elif (indm[0] == 1):
             kopt = 2
-    #
+        #print('**** USING KOPT = %d ****' % kopt) # DEBUG (PM)
+    
     offset = options['offset']
     # sparse (if is_sparse, convert to compressed sparse row format)   
     is_sparse = False
